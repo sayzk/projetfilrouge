@@ -89,3 +89,20 @@ salescount++;
 console.log("nombre de vente", salescount);
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // exo 4
+// - Définir une fonction (calculatePriceTTC(priceHT)) qui :
+
+//     • reçoit un prix HT en paramètre
+//     • calcule le prix TTC (en réutilisant la formule de l’exercice 3)
+//     • renvoie le prix TTC
+
+// - Définir une autre fonction (formatPrice(price)) qui :
+//     • reçoit un prix ( type :nombre)
+//     • arrondit ce prix à 2 décimales
+//     • ajoute le symbole de la monnaie
+//     • renvoie le résultat sous forme de texte
+//       (indice : il existe une méthode pour formater un nombre avec un certain nombre de décimales)
+
+// - Tester ces fonctions :
+//     • appeler la fonction de calcul du TTC avec différents prix HT
+//     • passer le résultat dans la fonction de formatage
+//     • afficher le résultat final dans la console
