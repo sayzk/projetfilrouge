@@ -5,6 +5,8 @@
  *           réutilisation des fonctions de prix
  *************************************************/
 
+// const { createElement } = require("react");
+
 /* --- Correction Exercices 1 à 4 --- */
 
 /* Exercice 1 - Variables & infos de base */
@@ -149,7 +151,7 @@ console.log(productNames = ["jean", "jean slim", "jean regular"]);
 
 // - créer tableau (productPricesHT)
 let productPricesHT = [35.99, 33.99, 37.99];
-console.log (productPricesHT = [35.99, 33.99, 37.99]) ;
+console.log(productPricesHT = [35.99, 33.99, 37.99]);
 
 // - afficher dans la console la longueur du tableau (le nombre d'éléments à l'intérieur)
 console.log("Nombre de produits :", productNames.length);
@@ -164,5 +166,84 @@ function displayProductsInConsole() {
   });
 }
 
-displayProductsInConsole(); 
+displayProductsInConsole();
+
+// - Créer un tableau contenant plusieurs produits
+//   (chaque produit regroupe ses informations dans une même structure)
+//   (indice : utiliser une syntaxe qui permet de stocker plusieurs propriétés ensemble)
+let products = [
+  {
+    id: "1",
+    title: "jeans",
+    priceHT: 45.99,
+    description: "Ce jean met parfaitement la silhouette en valeur tout en offrant un confort absolu du matin au soir.",
+    imgUrl: "assets/images.jpeg",
+  },
+  {
+    id: " 2",
+    title: "Tshirt",
+    priceHT: 65.99,
+    description: "Ce jean met parfaitement la silhouette en valeur tout en offrant un confort absolu du matin au soir.",
+    imgUrl: "assets/images.jpeg",
+  },
+  {
+    id: "3",
+    title: "short",
+    priceHT: 25.99,
+    description: "Ce jean met parfaitement la silhouette en valeur tout en offrant un confort absolu du matin au soir.",
+    imgUrl: "assets/images.jpeg",
+  },
+
+];
+
+// - Récupérer la zone du DOM où tous les produits doivent être affichés
+const produitList = document.getElementById("product-list");
+
+// - Adapter ou créer une fonction qui :
+//     • reçoit un produit en paramètre
+  function createCard(produit) {
+    //     • crée un conteneur pour la carte
+
+    
+  }
+//     • crée les éléments nécessaires (image, nom, prix TTC, description)
+//     • utilise les propriétés du produit pour remplir ces éléments
+//     • réutilise les fonctions de calcul et de formatage de prix
+//     • renvoie la carte complète
+
+// - Créer une fonction qui :
+//     • vide le contenu de la zone d’affichage des produits
+//     • parcourt le tableau de produits
+//     • pour chaque produit :
+//         - crée une carte à partir de ce produit
+//         - ajoute cette carte dans la zone d’affichage
+
+// - Appeler cette fonction pour afficher tous les produits dans la page
+
+
+// trouver ou mettre les futur card
+// pour chaque produit, 
+products.forEach((object) => {
+  // creer une card
+  const card = document.createElement("article");
+  // s'occuper du titre de la card
+  const titre = document.createElement("h3");
+  card.appendChild(titre);
+  console.log(object.title);
+  titre.textContent = object.title;
+
+  // s'occuper de l'image
+  const image = document.createElement("img");
+  card.appendChild(image);
+  console.log(object.imgUrl);
+  // mettre dans la source l'url
+  image.addEventListener = object.image;
+  console.log(object.image);
+
+  // 
+
+});
+    // lui mettre du contenu qui sera le title de la recette
+    // mettre la card dans le productcard
+
 
