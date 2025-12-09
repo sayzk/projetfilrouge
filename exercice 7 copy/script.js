@@ -249,5 +249,54 @@ products.forEach((object) => {
 
 // 5 Appeler cette fonction pour afficher tous les produits dans la page
 
+// ------------------------------------------------ 8
 
+// Créer les variables globales du panier :
+// Crée une variable cartItemCount initialisée à 0.
+
+let cartItemCount = 0;
+// Crée une variable cartTotal initialisée à 0
+let cartTotal = 0;
+
+// Récupérer les éléments du DOM :
+
+
+// cartCountHeader ← élément avec id "cart-count"
+// cartTotalHeader ← élément avec id "cart-total"
+// cartCountAside ← élément avec id "cart-count-aside"
+// cartTotalAside ← élément avec id "cart-total-aside"
+// cartMessage ← élément avec id "cart-message"
+
+
+
+// Récupère l’élément du header qui affiche le nombre d’articles (id="cart-count") et stocke-le dans cartCountHeader.
+// Récupère l’élément du header qui affiche le total (id="cart-total") et stocke-le dans cartTotalHeader.
+// Récupère l’élément de l’aside qui affiche le nombre d’articles (id="cart-count-aside") et stocke-le dans cartCountAside.
+// Récupère l’élément de l’aside qui affiche le total (id="cart-total-aside") et stocke-le dans cartTotalAside.
+// Récupère l’élément qui affichera le message (id="cart-message") et stocke-le dans cartMessage.
+// Créer la fonction getCartMessage(total) :
+
+// Cette fonction prend un paramètre total.
+// À l’intérieur, utilise une structure :
+// si total est égal à 0, retourne un message du type : “Votre panier est vide.”
+// sinon, si total est inférieur à 50, retourne un message du type : “Ajoutez encore des produits…”
+// sinon, retourne un message du type : “Livraison offerte 🎉 …”
+// Utilise des comparateurs (===, <) et un if / else if / else.
+// Créer la fonction updateCartDisplay() :
+
+// À l’intérieur, mets à jour :
+// le texte de cartCountHeader avec cartItemCount
+// le texte de cartTotalHeader avec cartTotal formaté grâce à formatPrice(cartTotal)
+// le texte de cartCountAside avec cartItemCount
+// le texte de cartTotalAside avec cartTotal formaté
+// le texte de cartMessage avec le résultat de getCartMessage(cartTotal)
+// Pense à vérifier que chaque élément du DOM existe avant de modifier son textContent (optionnel mais conseillé).
+// Tester plusieurs états du panier (manuellement dans le code) :
+
+// Modifie la valeur de cartItemCount et cartTotal pour simuler un panier vide, un panier sous 50€ et un panier au-dessus de 50€.
+// Après chaque modification, appelle updateCartDisplay() pour voir le résultat dans la page.
+// Exemple d’ordre de tests :
+// cartItemCount = 0; cartTotal = 0;
+// cartItemCount = 2; cartTotal = 30;
+// cartItemCount = 4; cartTotal = 60;
 
