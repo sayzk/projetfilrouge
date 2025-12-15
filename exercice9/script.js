@@ -340,6 +340,98 @@ function addToCart(product) {
 
 
 
+ * Nouveautés EXERCICE 9 - Panier interactif
+ * Objectif : ajouter des produits au panier avec
+ *            un clic sur un bouton
+ *************************************************/
+
+// 1) Réinitialiser le panier au démarrage de l'exo 9
+cartItemCount = 0;
+cartTotal = 0;
+updateCartDisplay();
+
+/**
+ * 2) Fonction qui ajoute un produit au panier
+ * - reçoit un produit
+ * - calcule son prix TTC
+ * - met à jour le total et le nombre d'articles
+ * - met à jour l'affichage grâce à updateCartDisplay()
+ */
+// function addToCart(product) {
+//   const priceTTC = calculatePriceTTC(product.priceHT);
+//   cartTotal += priceTTC;
+//   cartItemCount++;
+//   updateCartDisplay();
+// }
+
+/**
+ * 3) Nouvelle version de createProductCard :
+ *    on ajoute juste un bouton "Ajouter au panier"
+ *    et on branche le clic sur addToCart(product).
+ */
+function createProductCard(product) {
+  const article = document.createElement("article");
+  article.classList.add("product-card");
+
+  const img = document.createElement("img");
+  img.src = product.image;
+  img.alt = product.name;
+  img.classList.add("product-image");
+
+  const title = document.createElement("h3");
+  title.textContent = product.name;
+  title.classList.add("product-title");
+
+  const priceElt = document.createElement("p");
+  const priceTTC = calculatePriceTTC(product.priceHT);
+  priceElt.textContent = formatPrice(priceTTC);
+  priceElt.classList.add("product-price");
+
+  const desc = document.createElement("p");
+  desc.textContent = product.description;
+  desc.classList.add("product-description");
+
+  const button = document.createElement("button");
+  button.textContent = "Ajouter au panier";
+  button.classList.add("btn-add"); // correspond à ta classe CSS
+
+  button.addEventListener("click", function () {
+    addToCart(product);
+  });
+
+  article.appendChild(img);
+  article.appendChild(title);
+  article.appendChild(priceElt);
+  article.appendChild(desc);
+  article.appendChild(button);
+
+  return article;
+}
+
+/**
+ * 4) Réutiliser displayProductsInPage()
+ *    avec la nouvelle createProductCard
+ */
+function displayProductsInPage() {
+  if (!productListSection) return;
+
+  productListSection.innerHTML = "";
+
+  for (const product of products) {
+    const card = createProductCard(product);
+    productListSection.appendChild(card);
+  }
+}
+
+// 5) Initialisation finale
+displayProductsInPage();
+updateCartDisplay();
+
+console.log("Exercice 9 simplifié chargé ✅");
+
+
+
+
 
 
 
